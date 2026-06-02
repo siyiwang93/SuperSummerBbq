@@ -1,0 +1,184 @@
+@model LandingPageViewModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<section class="bbq-hero">
+    <div class="container position-relative">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-7">
+                <span class="badge bg-warning text-dark mb-3">@Model.Event.Type</span>
+                <h1 class="mb-3">@Model.Event.Name</h1>
+                <p class="lead mb-2">
+                    <i class="bi bi-calendar-event me-2"></i>@Model.Event.Date.ToString("dddd, MMMM d, yyyy") · @Model.Event.Date.ToString("h:mm tt")
+                </p>
+                <p class="mb-4">
+                    <i class="bi bi-geo-alt me-2"></i>@Model.Event.Location
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                    <a asp-controller="Registrations" asp-action="Register" class="btn btn-bbq-primary btn-lg">
+                        <i class="bi bi-pencil-square me-1"></i> Register Now
+                    </a>
+                    <a asp-controller="Registrations" asp-action="Lookup" class="btn btn-bbq-outline btn-lg">
+                        <i class="bi bi-person-check me-1"></i> Manage My Registration
+                    </a>
+                </div>
+                <p class="mt-4 mb-0 small opacity-75">
+                    <i class="bi bi-people me-1"></i> @Model.TotalRegistrations employee@(Model.TotalRegistrations == 1 ? "" : "s") registered so far
+                </p>
+            </div>
+            <div class="col-lg-5">
+                <div id="countdown" class="countdown-box" data-event-date="@Model.EventDateIso">
+                    <p class="countdown-label-main text-center mb-3 fw-semibold">Countdown to the BBQ</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <div class="countdown-unit">
+                            <span class="countdown-value" id="cd-days">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-unit">
+                            <span class="countdown-value" id="cd-hours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-unit">
+                            <span class="countdown-value" id="cd-minutes">00</span>
+                            <span class="countdown-label">Min</span>
+                        </div>
+                        <div class="countdown-unit">
+                            <span class="countdown-value" id="cd-seconds">00</span>
+                            <span class="countdown-label">Sec</span>
+                        </div>
+                    </div>
+                    <p id="countdown-live" class="text-center mb-0 fw-bold d-none mt-2">The BBQ is today!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container py-5" id="agenda">
+    <div class="row g-4">
+        <div class="col-lg-6">
+            <div class="card section-card">
+                <div class="card-header">
+                    <i class="bi bi-clock-history me-2"></i>Event Agenda
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled mb-0">
+                        <li class="d-flex gap-3 mb-3 pb-3 border-bottom">
+                            <span class="agenda-time">11:00</span>
+                            <div>
+                                <strong>Doors Open &amp; Check-in</strong>
+                                <p class="mb-0 text-muted small">Pick up your name tag and grab a welcome drink.</p>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3 mb-3 pb-3 border-bottom">
+                            <span class="agenda-time">11:30</span>
+                            <div>
+                                <strong>Welcome Remarks</strong>
+                                <p class="mb-0 text-muted small">Leadership kick-off and team shout-outs.</p>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3 mb-3 pb-3 border-bottom">
+                            <span class="agenda-time">12:00</span>
+                            <div>
+                                <strong>Lunch Served</strong>
+                                <p class="mb-0 text-muted small">Burgers, veggie options, sides, and refreshments for all.</p>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3 mb-3 pb-3 border-bottom">
+                            <span class="agenda-time">13:00</span>
+                            <div>
+                                <strong>Games &amp; Activities</strong>
+                                <p class="mb-0 text-muted small">Cornhole, relay races, and department trivia.</p>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <span class="agenda-time">15:00</span>
+                            <div>
+                                <strong>Closing &amp; Shuttle Departures</strong>
+                                <p class="mb-0 text-muted small">Shuttle service returns to main campus stops.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6" id="faq">
+            <div class="card section-card">
+                <div class="card-header">
+                    <i class="bi bi-question-circle me-2"></i>Frequently Asked Questions
+                </div>
+                <div class="card-body">
+                    <div class="accordion accordion-flush" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Is the event free?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes! This is a free annual internal company event for all employees.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Can I bring a guest?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes — indicate on the registration form if you are bringing a guest so we can plan food and seating.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    How do I get to the venue?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Shuttle service is available to and from the venue. Select your shuttle preferences when registering, or drive and park on-site.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    How do I update or cancel my registration?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Use <strong>Manage My Registration</strong> in the menu and sign in with your Employee ID and work email.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    What about dietary restrictions?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    List any dietary preferences or allergies on the registration form. Our catering team will accommodate vegetarian, vegan, gluten-free, and other needs.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        initBbqCountdown("@Model.EventDateIso");
+    </script>
+}

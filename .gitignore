@@ -1,0 +1,16 @@
+## Build
+bin/
+obj/
+
+## SQLite database (local dev data — don't version)
+*.db
+*.db-shm
+*.db-wal
+
+## IDE / OS
+.vs/
+.vscode/
+*.user
+*.suo
+Thumbs.db
+.DS_Store

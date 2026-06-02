@@ -1,0 +1,33 @@
+@model EmailConfirmationViewModel
+@{
+    ViewData["Title"] = "Registration Confirmed";
+}
+
+<section class="form-page">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="form-card text-center mb-4">
+                    <i class="bi bi-check-circle-fill text-success display-3 mb-3"></i>
+                    <h1 class="h3 mb-2">You're Registered!</h1>
+                    <p class="text-muted mb-4">
+                        Thank you, @Model.Registration.FirstName! Your spot at @Model.Event.Name is confirmed.
+                    </p>
+                    <a asp-action="Details" asp-route-id="@Model.Registration.Id" class="btn btn-bbq-primary me-2">View My Registration</a>
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary">Back to Home</a>
+                </div>
+
+                <div class="form-card">
+                    <h2 class="h5 mb-3">
+                        <i class="bi bi-envelope-check me-2"></i>Simulated Confirmation Email
+                    </h2>
+                    <p class="text-muted small mb-3">
+                        In production this would be sent to <strong>@Model.Registration.Email</strong>.
+                        For this demo, the message is logged to the server console and shown below.
+                    </p>
+                    <div class="email-preview">@Model.SimulatedEmailBody</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

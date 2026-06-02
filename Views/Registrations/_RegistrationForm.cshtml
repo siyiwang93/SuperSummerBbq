@@ -1,0 +1,62 @@
+@model RegistrationFormViewModel
+
+<div class="row g-3">
+    <div class="col-md-6">
+        <label asp-for="FirstName" class="form-label"></label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="LastName" class="form-label"></label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="Department" class="form-label"></label>
+        <input asp-for="Department" class="form-control" list="departmentList" placeholder="e.g. Engineering, HR, Operations" />
+        <datalist id="departmentList">
+            <option value="Engineering"></option>
+            <option value="Human Resources"></option>
+            <option value="Operations"></option>
+            <option value="Finance"></option>
+            <option value="Sales"></option>
+            <option value="Marketing"></option>
+            <option value="IT"></option>
+            <option value="Warehouse"></option>
+        </datalist>
+        <span asp-validation-for="Department" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="EmployeeId" class="form-label"></label>
+        <input asp-for="EmployeeId" class="form-control" />
+        <span asp-validation-for="EmployeeId" class="text-danger"></span>
+    </div>
+    <div class="col-12">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" type="email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="col-12">
+        <label asp-for="DietaryPreferences" class="form-label"></label>
+        <textarea asp-for="DietaryPreferences" class="form-control" rows="2" placeholder="e.g. Vegetarian, nut allergy — leave blank if none"></textarea>
+        <span asp-validation-for="DietaryPreferences" class="text-danger"></span>
+    </div>
+    <div class="col-md-4">
+        <div class="form-check form-switch mt-2">
+            <input asp-for="ShuttleToVenue" class="form-check-input" role="switch" />
+            <label asp-for="ShuttleToVenue" class="form-check-label"></label>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-check form-switch mt-2">
+            <input asp-for="ShuttleBack" class="form-check-input" role="switch" />
+            <label asp-for="ShuttleBack" class="form-check-label"></label>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-check form-switch mt-2">
+            <input asp-for="BringingGuest" class="form-check-input" role="switch" />
+            <label asp-for="BringingGuest" class="form-check-label"></label>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+@model LookupViewModel
+@{
+    ViewData["Title"] = "Manage Registration";
+}
+
+<section class="form-page">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="form-card">
+                    <h1 class="h3 mb-1"><i class="bi bi-person-check text-warning me-2"></i>Manage My Registration</h1>
+                    <p class="text-muted mb-4">Enter your Employee ID and work email to view, edit, or cancel your registration.</p>
+
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                    <form asp-action="Lookup" method="post">
+                        @Html.AntiForgeryToken()
+                        <div class="mb-3">
+                            <label asp-for="EmployeeId" class="form-label"></label>
+                            <input asp-for="EmployeeId" class="form-control" />
+                            <span asp-validation-for="EmployeeId" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label"></label>
+                            <input asp-for="Email" class="form-control" type="email" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-bbq-primary w-100">Find My Registration</button>
+                    </form>
+
+                    <hr class="my-4" />
+                    <p class="text-center mb-0 small text-muted">
+                        Not registered yet?
+                        <a asp-action="Register">Register now</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
