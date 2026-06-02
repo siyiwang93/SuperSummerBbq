@@ -35,6 +35,12 @@ body {
   color: #fff !important;
 }
 
+.bbq-navbar .nav-link.active {
+  color: #fff !important;
+  font-weight: 700;
+  border-bottom: 2px solid var(--bbq-accent);
+}
+
 .bbq-hero {
   background: linear-gradient(160deg, var(--bbq-sky) 0%, #48cae4 40%, var(--bbq-secondary) 100%);
   color: #fff;

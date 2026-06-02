@@ -20,13 +20,16 @@
             <div class="collapse navbar-collapse" id="bbqNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="nav-link landing-nav-link" asp-controller="Home" asp-action="Index" data-landing-panel="home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Registrations" asp-action="Register">Register</a>
+                        <a class="nav-link landing-nav-link" asp-controller="Home" asp-action="Index" asp-fragment="agenda" data-landing-panel="agenda">Agenda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Registrations" asp-action="Lookup">Manage Registration</a>
+                        <a class="nav-link landing-nav-link" asp-controller="Home" asp-action="Index" asp-fragment="faq" data-landing-panel="faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Registrations" asp-action="Lookup">My Registration</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="Admin" asp-action="Login">Admin</a>

@@ -20,7 +20,7 @@
                         <i class="bi bi-pencil-square me-1"></i> Register Now
                     </a>
                     <a asp-controller="Registrations" asp-action="Lookup" class="btn btn-bbq-outline btn-lg">
-                        <i class="bi bi-person-check me-1"></i> Manage My Registration
+                        <i class="bi bi-person-check me-1"></i> My Registration
                     </a>
                 </div>
                 <p class="mt-4 mb-0 small opacity-75">
@@ -54,9 +54,9 @@
     </div>
 </section>
 
-<section class="container py-5" id="agenda">
-    <div class="row g-4">
-        <div class="col-lg-6">
+<section class="container py-5 landing-panel d-none" id="panel-agenda" data-landing-panel="agenda">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
             <div class="card section-card">
                 <div class="card-header">
                     <i class="bi bi-clock-history me-2"></i>Event Agenda
@@ -102,7 +102,12 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6" id="faq">
+    </div>
+</section>
+
+<section class="container py-5 landing-panel d-none" id="panel-faq" data-landing-panel="faq">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
             <div class="card section-card">
                 <div class="card-header">
                     <i class="bi bi-question-circle me-2"></i>Frequently Asked Questions
@@ -153,7 +158,7 @@
                             </h2>
                             <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Use <strong>Manage My Registration</strong> in the menu and sign in with your Employee ID and work email.
+                                    Use <strong>My Registration</strong> in the menu and sign in with your Employee ID and work email.
                                 </div>
                             </div>
                         </div>
@@ -179,5 +184,6 @@
 @section Scripts {
     <script>
         initBbqCountdown("@Model.EventDateIso");
+        initLandingPanels();
     </script>
 }
