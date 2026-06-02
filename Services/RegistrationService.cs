@@ -1,8 +1,8 @@
-using chloew.Data;
-using chloew.Models;
+using SuperSummerBbq.Data;
+using SuperSummerBbq.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace chloew.Services;
+namespace SuperSummerBbq.Services;
 
 public class RegistrationService(ApplicationDbContext db) : IRegistrationService
 {

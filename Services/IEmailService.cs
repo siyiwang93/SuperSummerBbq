@@ -1,6 +1,6 @@
-using chloew.Models;
+using SuperSummerBbq.Models;
 
-namespace chloew.Services;
+namespace SuperSummerBbq.Services;
 
 public interface IEmailService
 {

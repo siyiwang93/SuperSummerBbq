@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace chloew.Data.Migrations;
+namespace SuperSummerBbq.Data.Migrations;
 
 [DbContext(typeof(ApplicationDbContext))]
 [Migration("20260602190000_InitialCreate")]
@@ -14,7 +14,7 @@ partial class InitialCreate
     {
         modelBuilder.HasAnnotation("ProductVersion", "8.0.11");
 
-        modelBuilder.Entity("chloew.Models.Registration", b =>
+        modelBuilder.Entity("SuperSummerBbq.Models.Registration", b =>
         {
             b.Property<int>("Id")
                 .ValueGeneratedOnAdd()

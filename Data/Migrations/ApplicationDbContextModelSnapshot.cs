@@ -1,10 +1,10 @@
-using chloew.Data;
+using SuperSummerBbq.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
 #nullable disable
 
-namespace chloew.Data.Migrations;
+namespace SuperSummerBbq.Data.Migrations;
 
 [DbContext(typeof(ApplicationDbContext))]
 partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -13,7 +13,7 @@ partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
         modelBuilder.HasAnnotation("ProductVersion", "8.0.11");
 
-        modelBuilder.Entity("chloew.Models.Registration", b =>
+        modelBuilder.Entity("SuperSummerBbq.Models.Registration", b =>
         {
             b.Property<int>("Id")
                 .ValueGeneratedOnAdd()

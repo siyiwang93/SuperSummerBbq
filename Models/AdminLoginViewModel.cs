@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace chloew.Models;
+namespace SuperSummerBbq.Models;
 
 public class AdminLoginViewModel
 {

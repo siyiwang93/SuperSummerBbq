@@ -1,9 +1,9 @@
-using chloew.Models;
-using chloew.Services;
+using SuperSummerBbq.Models;
+using SuperSummerBbq.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
-namespace chloew.Controllers;
+namespace SuperSummerBbq.Controllers;
 
 public class HomeController(
     ILogger<HomeController> logger,

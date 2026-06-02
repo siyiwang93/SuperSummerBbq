@@ -1,8 +1,8 @@
-using chloew.Models;
-using chloew.Services;
+using SuperSummerBbq.Models;
+using SuperSummerBbq.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace chloew.Controllers;
+namespace SuperSummerBbq.Controllers;
 
 public class AdminController(
     AdminAuthService adminAuth,

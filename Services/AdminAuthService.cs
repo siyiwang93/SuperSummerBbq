@@ -1,8 +1,8 @@
-using chloew.Models;
+using SuperSummerBbq.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 
-namespace chloew.Services;
+namespace SuperSummerBbq.Services;
 
 public class AdminAuthService(IHttpContextAccessor httpContextAccessor, IOptions<EventSettings> eventOptions)
 {

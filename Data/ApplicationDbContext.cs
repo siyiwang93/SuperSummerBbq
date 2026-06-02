@@ -1,7 +1,7 @@
-using chloew.Models;
+using SuperSummerBbq.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace chloew.Data;
+namespace SuperSummerBbq.Data;
 
 public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)
 {
