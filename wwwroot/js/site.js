@@ -31,51 +31,19 @@
 
   window.initBbqCountdown = initCountdown;
 
-  function initLandingPanels() {
-    var panels = document.querySelectorAll(".landing-panel");
-    var navLinks = document.querySelectorAll(".landing-nav-link");
-    if (!panels.length) return;
-
-    function showPanel(name) {
-      panels.forEach(function (panel) {
-        var isActive = panel.getAttribute("data-landing-panel") === name;
-        panel.classList.toggle("d-none", !isActive);
-      });
-
-      navLinks.forEach(function (link) {
-        var active = link.getAttribute("data-landing-panel") === name;
-        link.classList.toggle("active", active);
-        link.setAttribute("aria-current", active ? "page" : "false");
-      });
+  function initPageScroll() {
+    function scrollToHash() {
+      var hash = window.location.hash;
+      if (!hash) return;
+      var target = document.querySelector(hash);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
 
-    function panelFromHash() {
-      var hash = (window.location.hash || "").replace("#", "").toLowerCase();
-      if (hash === "agenda" || hash === "faq") return hash;
-      return "home";
-    }
-
-    navLinks.forEach(function (link) {
-      link.addEventListener("click", function (e) {
-        var panel = link.getAttribute("data-landing-panel");
-        if (!panel || panel === "home") return;
-
-        var onLandingPage = document.getElementById("panel-agenda");
-        if (!onLandingPage) return;
-
-        e.preventDefault();
-        history.replaceState(null, "", "#" + panel);
-        showPanel(panel);
-        var target = document.getElementById("panel-" + panel);
-        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-    });
-
-    showPanel(panelFromHash());
-    window.addEventListener("hashchange", function () {
-      showPanel(panelFromHash());
-    });
+    scrollToHash();
+    window.addEventListener("hashchange", scrollToHash);
   }
 
-  window.initLandingPanels = initLandingPanels;
+  window.initPageScroll = initPageScroll;
 })();
