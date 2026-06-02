@@ -7,7 +7,6 @@
     <div class="container position-relative">
         <div class="row align-items-center g-4">
             <div class="col-lg-7">
-                <span class="badge bg-warning text-dark mb-3">@Model.Event.Type</span>
                 <h1 class="mb-3">@Model.Event.Name</h1>
                 <p class="lead mb-2">
                     <i class="bi bi-calendar-event me-2"></i>@Model.Event.Date.ToString("dddd, MMMM d, yyyy") · @Model.Event.Date.ToString("h:mm tt")
@@ -53,7 +52,7 @@
 
 <section class="container py-5">
     <div class="row g-4">
-        <div class="col-lg-6" id="agenda">
+        <div class="col-12" id="agenda">
             <div class="card section-card">
                 <div class="card-header">
                     <i class="bi bi-clock-history me-2"></i>Event Agenda
@@ -99,7 +98,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6" id="faq">
+        <div class="col-12" id="faq">
             <div class="card section-card">
                 <div class="card-header">
                     <i class="bi bi-question-circle me-2"></i>Frequently Asked Questions
