@@ -84,12 +84,13 @@ h1, h2, h3, h4, .font-display {
   border-bottom: 3px solid transparent;
 }
 
-.bbq-navbar .nav-link:hover,
-.bbq-navbar .nav-link.active {
+.bbq-navbar .nav-link:hover {
   color: var(--primary) !important;
+  background: var(--surface-container);
 }
 
-.bbq-navbar .nav-link.active {
+.bbq-navbar .nav-link.bbq-nav-current {
+  color: var(--primary) !important;
   border-bottom-color: var(--primary);
   font-weight: 700;
 }

@@ -33,7 +33,7 @@
                         <a class="nav-link" asp-controller="Home" asp-action="Index" asp-fragment="faq" data-nav="faq">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link@(ViewContext.RouteData.Values["controller"]?.ToString() == "Registrations" && ViewContext.RouteData.Values["action"]?.ToString() == "Lookup" ? " active" : "")" asp-controller="Registrations" asp-action="Lookup">My Registration</a>
+                        <a class="nav-link@(ViewContext.RouteData.Values["controller"]?.ToString() == "Registrations" && ViewContext.RouteData.Values["action"]?.ToString() == "Lookup" ? " bbq-nav-current" : "")" asp-controller="Registrations" asp-action="Lookup">My Registration</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="Admin" asp-action="Login">Admin</a>
@@ -72,5 +72,34 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    <script>
+        (function () {
+            function updateBbqNav() {
+                var nav = document.querySelector(".bbq-navbar");
+                if (!nav) return;
+
+                nav.querySelectorAll("[data-nav]").forEach(function (link) {
+                    link.classList.remove("bbq-nav-current");
+                    link.classList.remove("active");
+                });
+
+                var path = window.location.pathname.toLowerCase().replace(/\/+$/, "") || "/";
+                var onHome = path === "/" || path === "" || path.endsWith("/home") || path.endsWith("/home/index");
+                if (!onHome) return;
+
+                var hash = window.location.hash;
+                var current = hash === "#agenda"
+                    ? nav.querySelector('[data-nav="agenda"]')
+                    : hash === "#faq"
+                        ? nav.querySelector('[data-nav="faq"]')
+                        : nav.querySelector('[data-nav="home"]');
+
+                if (current) current.classList.add("bbq-nav-current");
+            }
+
+            updateBbqNav();
+            window.addEventListener("hashchange", updateBbqNav);
+        })();
+    </script>
 </body>
 </html>
