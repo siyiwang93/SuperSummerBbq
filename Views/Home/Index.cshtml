@@ -1,7 +1,14 @@
 @model LandingPageViewModel
 @{
     ViewData["Title"] = "Home";
+    // Stitch (code.html) image assets
     var heroImage = "https://lh3.googleusercontent.com/aida-public/AB6AXuDdgFWjpfr4XSUQ3HA_1J-Pj1ecm3SnJW7gS2I5Kx5Ya5lS3nh-6jHr5VYsDxWB0M8fSXa2Xhfbe9eik19Q3bwX7xIAmRunqfVp2S5nSPpR_G1y9MRkHMNfFUhyna9wSCP2FRGJ-0IHa4mtJpqAD2VYxass5NKxAyDX8Hz8agad42Nm_JxnkJqj1p_nx7CYKfggKFWzsAARgpBvnid_lwuOtVMlYPV6i6_eyh5FsWHLZgB1XQPME9Y3DQ6stkluI67HFPVEZujgXg_R";
+    var feastBurger = "https://lh3.googleusercontent.com/aida-public/AB6AXuA7CXWQ8Fyp4d3rwKK8V31FbgqObAWX9MtxFljV44sYQfEeL2eTyU52AFOJECv4V25HcC-1LiQJlkrsChbAyIgkP19Zal-3P0IVA021SaHdmIwegK_uD7iZZLaqZzBOLvC07W0yhdF8ZvYXSEXdCgs9Lk4ky9r7j43iy8XFox128uD9SwKfbGmARngg5WlBMTMhB9VlMl28R7hgzo00DD4gjJ3bYjSmkZONHG5QIsG6neFVI5KGeRhCsw3SpmWxE43xPadMNqLsRFdc";
+    var feastCorn = "https://lh3.googleusercontent.com/aida-public/AB6AXuCgx2g50XQtoxzAv7pqu_lOBjzGYQSC-YdNLI4qJw8y_emSic4SC7oZdqpM1VAtjSAI_o8Dddt7XJfKTtNo0Wtka8p35AuUbjT-91RTwQYSvFQiYMdGkvaAIWsyd9bbDlFFQXdKj39HQz4OTzI39nayAplGebVNowHd8mJOGFT42CFMp25CNHe0o5hBUz-hzemOIguY2vE6O06Im0jNBLJYuLUHUWgGt_EiZF4hv_KoV8q-L4b_WiKxuWRGbeRyKfC-xj9HRFlhKuBm";
+    var feastLemonade = "https://lh3.googleusercontent.com/aida-public/AB6AXuCduPVHN4KyR6b8uSBto__hr-IPtKfAOt1gukkU70SsDajOVu-2QfFmDGv3ZuwCdK1KTyoNWROKV0yednx7uqZ2eynrF3RYxRxfSVyxozs_45jEzcetdtw-N5aHMGj_Ga-_8YT1w4D5ccdqyNDXjyGwi5MFcEJxvjOMHX1dgO8ehP5WyeIJ1BgdNC4emAOscUCGxOLloJsjq2waqapKFW6Xs92U0oMgWGmW_RiTrzAXnD6MrFbsTf9qnieoskLfXRAov6FnO46VMBA5";
+    var feastTacos = "https://lh3.googleusercontent.com/aida-public/AB6AXuA7tr4HjxXNE8vCwqtMNtPCY0I0oUKXI6wsbvURQC322AYayZKfIRaZqChJS8QnZ-SXjqzCcsEdZ7YjwW1Um53XzSBTeuhpiMcJ-JpvIEwZMa0JKTnXdhAKfz3LY1eI2PehHHqr_sLUiNAYLZYhIdhtuDTjH6XvzG18QZnacMejY1jfxV9MakOb0oHGlQSpSDdqs1vHAH0OWCj5Gc8tz6qtJguiqMewxVbZJxJfFT99AqcQkliJNg4tdtnAUTpgjFyym-BoTdxAtwx-";
+    var pitmasterMayda = "https://lh3.googleusercontent.com/aida-public/AB6AXuAmXgHt4niMTtPhNqTyoHKozxj6iHJuviisVjSIXeEElOb3SGi9z1CPyfPN-cr8GWmhpWGtNPcaMVduYtQyfrfkLzpVRRDWuLVREDH2fEursHQJXhbrqapfD2-gslTGQBRi17wEtVnC8DTBmvWL0sUPr4Z14IZ8ZJaRQ2qz4Qqr-tEFn-wSP_wQReP_aDBS0ofiSNGyH92XWkWJC1KmUj12_MyWKGwZ83mKwn_LrRK3WJVAt9V1OEE6XDRSy-PmeVcXsnFkGcdahyI_";
+    var pitmasterGabriel = "https://lh3.googleusercontent.com/aida-public/AB6AXuB1KWqCSKmXr3GYjtk-YfntlhzTVVt_6U61gr4lz8oLy_9Lfh-JCG86MVpnjlIQ5zOF5kfMHm8BszlE9GETTFPoJyG7Ys3sLuOxyY5djuZiP9He2P9SoF4TUOd74GKlGRUeEy1JpHpZWd-A0gFJ0bOZ6DtWMZ1IWR2m7oRi2joohTEICsTOm7t3-lxrFPMPgA9tpNEo29ZonR9V5fdOx7UUIaidZm8wZEuhlGSNrm0TYcopCzX2uQ4FhOiYK-AOaWop-jTBLci8-dta";
 }
 
 <section class="bbq-hero-stitch">
@@ -41,13 +48,86 @@
             <a asp-controller="Registrations" asp-action="Register" class="btn btn-bbq-primary btn-lg">
                 <i class="bi bi-balloon-heart me-1"></i> Join the Party
             </a>
-            <a asp-controller="Home" asp-action="Index" asp-fragment="agenda" class="btn btn-bbq-secondary btn-lg">
-                View Agenda
+            <a asp-controller="Home" asp-action="Index" asp-fragment="feast" class="btn btn-bbq-secondary btn-lg">
+                View The Feast
             </a>
         </div>
         <p class="hero-stats mb-0">
             <i class="bi bi-people me-1"></i> @Model.TotalRegistrations employee@(Model.TotalRegistrations == 1 ? "" : "s") registered so far
         </p>
+    </div>
+</section>
+
+<section class="bbq-section bbq-section-full" id="feast">
+    <div class="bbq-section-inner">
+        <h2 class="bbq-section-title">The Main Event: The Feast</h2>
+        <p class="bbq-section-subtitle">A sensory journey through the best of summer grilling, from flame-kissed burgers to sun-ripened sides.</p>
+        <div class="bento-grid">
+            <article class="bento-card bento-large">
+                <img src="@feastBurger" alt="Gourmet Burger" loading="lazy" />
+                <div class="bento-overlay bento-overlay-strong">
+                    <div class="bento-chips">
+                        <span class="bento-chip bento-chip-primary">Bestseller</span>
+                        <span class="bento-chip bento-chip-secondary">Spicy Option</span>
+                    </div>
+                    <h3>The Sizzle Master Burger</h3>
+                    <p>Hand-pressed wagyu, aged cheddar, and our secret &quot;Habanero Honey&quot; BBQ sauce on a toasted brioche.</p>
+                </div>
+            </article>
+            <article class="bento-card bento-small">
+                <img src="@feastCorn" alt="Grilled Corn" loading="lazy" />
+                <div class="bento-overlay">
+                    <h3>Golden Street Corn</h3>
+                    <p>Lime crema, cotija, and a dash of smoked paprika.</p>
+                </div>
+            </article>
+            <article class="bento-card bento-small">
+                <img src="@feastLemonade" alt="Cold Lemonade" loading="lazy" />
+                <div class="bento-overlay">
+                    <h3>Hand-Squeezed Refreshment</h3>
+                    <p>Mint-infused lemonade with fresh Sicilian lemons.</p>
+                </div>
+            </article>
+            <article class="bento-card bento-wide">
+                <img src="@feastTacos" alt="Chef Gabriel's Street Tacos" loading="lazy" />
+                <div class="bento-overlay bento-overlay-strong">
+                    <div class="bento-chips">
+                        <span class="bento-chip bento-chip-tertiary">Chef's Special</span>
+                    </div>
+                    <h3>Chef Gabriel's Street Tacos</h3>
+                    <p>Authentic slow-smoked carnitas with fresh cilantro, onions, and a zingy lime squeeze.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="bbq-section bbq-section-alt bbq-section-full" id="pitmasters">
+    <div class="bbq-section-inner">
+        <h2 class="bbq-section-title">Meet the Pitmasters</h2>
+        <p class="bbq-section-subtitle">The culinary artists behind this summer's most anticipated flavors.</p>
+        <div class="pitmasters-grid">
+            <article class="pitmaster-card">
+                <div class="pitmaster-photo">
+                    <img src="@pitmasterMayda" alt="Chef Mayda" loading="lazy" />
+                </div>
+                <div class="pitmaster-body">
+                    <div class="pitmaster-eyebrow">Venezuelan Fire</div>
+                    <h3>Chef Mayda</h3>
+                    <p>Bringing the heat with authentic Arepas and Venezuelan BBQ traditions.</p>
+                </div>
+            </article>
+            <article class="pitmaster-card">
+                <div class="pitmaster-photo">
+                    <img src="@pitmasterGabriel" alt="Chef Gabriel" loading="lazy" />
+                </div>
+                <div class="pitmaster-body">
+                    <div class="pitmaster-eyebrow">Mexican Tacos</div>
+                    <h3>Chef Gabriel</h3>
+                    <p>Master of the grill, serving up hand-pressed tortillas and slow-smoked carnitas.</p>
+                </div>
+            </article>
+        </div>
     </div>
 </section>
 
@@ -104,7 +184,7 @@
         <p class="bbq-section-subtitle">Yard games, team challenges, and photo-worthy moments — the afternoon fun starts at 1:00 PM on the warehouse lawn.</p>
         <div class="bento-grid">
             <article class="bento-card bento-large">
-                <img src="https://images.unsplash.com/photo-1606923829579-02741327e04e?w=1200&amp;h=800&amp;fit=crop" alt="Cornhole boards on the lawn" loading="lazy" />
+                <img src="@heroImage" alt="Outdoor BBQ lawn games" loading="lazy" />
                 <div class="bento-overlay bento-overlay-strong">
                     <div class="bento-chips">
                         <span class="bento-chip bento-chip-primary">Team favorite</span>
@@ -115,21 +195,21 @@
                 </div>
             </article>
             <article class="bento-card bento-small">
-                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&amp;h=600&amp;fit=crop" alt="Outdoor relay race" loading="lazy" />
+                <img src="@pitmasterGabriel" alt="Grill master at work" loading="lazy" />
                 <div class="bento-overlay">
                     <h3>Relay Races</h3>
                     <p>Department teams — trophies for speed and spirit.</p>
                 </div>
             </article>
             <article class="bento-card bento-small">
-                <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&amp;h=600&amp;fit=crop" alt="Team trivia at picnic tables" loading="lazy" />
+                <img src="@feastLemonade" alt="Refreshments and social time" loading="lazy" />
                 <div class="bento-overlay">
                     <h3>Department Trivia</h3>
                     <p>Company know-how with prizes for the top table.</p>
                 </div>
             </article>
             <article class="bento-card bento-wide">
-                <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1400&amp;h=700&amp;fit=crop" alt="Photo booth and lawn games" loading="lazy" />
+                <img src="@feastTacos" alt="Festival food and fun" loading="lazy" />
                 <div class="bento-overlay bento-overlay-strong">
                     <div class="bento-chips">
                         <span class="bento-chip bento-chip-tertiary">Drop-in anytime</span>
