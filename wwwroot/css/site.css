@@ -1,151 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap");
+
 :root {
-  --bbq-primary: #e85d04;
-  --bbq-primary-dark: #c44900;
-  --bbq-secondary: #f48c06;
-  --bbq-accent: #ffba08;
-  --bbq-sky: #0096c7;
-  --bbq-grass: #2d6a4f;
-  --bbq-cream: #fff8f0;
-  --bbq-text: #1b263b;
+  --bbq-ink: #1a1410;
+  --bbq-charcoal: #2f2924;
+  --bbq-terracotta: #c44d2a;
+  --bbq-terracotta-dark: #9a3a20;
+  --bbq-gold: #f0b429;
+  --bbq-gold-soft: #ffe8a3;
+  --bbq-sage: #3d6b4f;
+  --bbq-sage-light: #e8f2eb;
+  --bbq-cream: #faf6ef;
+  --bbq-cream-deep: #f3ebe0;
+  --bbq-sky: #4a8fad;
+  --bbq-shadow: rgba(26, 20, 16, 0.12);
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Atkinson Hyperlegible", system-ui, sans-serif;
 }
 
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 5.5rem;
 }
 
 #agenda,
 #faq {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 5.5rem;
 }
 
 body {
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  color: var(--bbq-text);
-  background-color: var(--bbq-cream);
+  font-family: var(--font-body);
+  color: var(--bbq-charcoal);
+  background: var(--bbq-cream);
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(240, 180, 41, 0.18) 0%, transparent 42%),
+    radial-gradient(circle at 88% 92%, rgba(74, 143, 173, 0.12) 0%, transparent 38%);
   min-height: 100vh;
 }
 
 .bbq-navbar {
-  background: linear-gradient(135deg, var(--bbq-primary) 0%, var(--bbq-secondary) 100%);
-  box-shadow: 0 2px 12px rgba(232, 93, 4, 0.3);
+  background: rgba(26, 20, 16, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 3px solid var(--bbq-gold);
+  box-shadow: 0 8px 24px var(--bbq-shadow);
+}
+
+.bbq-navbar .navbar-brand {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
 }
 
 .bbq-navbar .nav-link {
-  color: rgba(255, 255, 255, 0.9) !important;
-  font-weight: 500;
+  color: rgba(255, 248, 240, 0.88) !important;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  transition: color 0.2s ease;
 }
 
 .bbq-navbar .nav-link:hover {
-  color: #fff !important;
-}
-
-.bbq-navbar .nav-link.active {
-  color: #fff !important;
-  font-weight: 700;
-  border-bottom: 2px solid var(--bbq-accent);
+  color: var(--bbq-gold) !important;
 }
 
 .bbq-hero {
-  background: linear-gradient(160deg, var(--bbq-sky) 0%, #48cae4 40%, var(--bbq-secondary) 100%);
-  color: #fff;
-  padding: 4rem 0 5rem;
   position: relative;
   overflow: hidden;
+  padding: 5rem 0 5.5rem;
+  color: #fff8f0;
+  background:
+    linear-gradient(145deg, #1a1410 0%, #3d2618 35%, #8b3d22 70%, #c44d2a 100%);
 }
 
 .bbq-hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 80% 20%, rgba(255, 186, 8, 0.25) 0%, transparent 50%);
+  background:
+    radial-gradient(ellipse 80% 60% at 100% 0%, rgba(240, 180, 41, 0.45) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 0% 100%, rgba(74, 143, 173, 0.35) 0%, transparent 50%);
   pointer-events: none;
 }
 
+.bbq-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.bbq-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--bbq-gold);
+  margin-bottom: 0.75rem;
+  animation: fadeUp 0.7s ease both;
+}
+
 .bbq-hero h1 {
-  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 800;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  animation: fadeUp 0.7s ease 0.1s both;
+}
+
+.bbq-hero .hero-meta {
+  animation: fadeUp 0.7s ease 0.2s both;
+}
+
+.bbq-hero .hero-actions {
+  animation: fadeUp 0.7s ease 0.3s both;
+}
+
+.bbq-hero .hero-stats {
+  animation: fadeUp 0.7s ease 0.4s both;
 }
 
 .countdown-box {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 248, 240, 0.12);
+  backdrop-filter: blur(16px);
+  border-radius: 1.25rem;
+  padding: 1.75rem 1.25rem;
+  border: 1px solid rgba(255, 232, 163, 0.35);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  animation: fadeUp 0.8s ease 0.25s both;
 }
 
 .countdown-unit {
   text-align: center;
-  min-width: 4.5rem;
+  min-width: 4.25rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 0.75rem;
 }
 
 .countdown-value {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
   font-weight: 800;
   line-height: 1;
   display: block;
+  color: var(--bbq-gold);
 }
 
 .countdown-label {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  opacity: 0.85;
+  letter-spacing: 0.12em;
+  opacity: 0.8;
+  margin-top: 0.35rem;
+  display: block;
+}
+
+.landing-sections {
+  padding: 4rem 0 5rem;
 }
 
 .section-card {
   background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(27, 38, 59, 0.08);
-  border: none;
-  height: 100%;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(47, 41, 36, 0.08);
+  box-shadow: 0 12px 40px var(--bbq-shadow);
+  overflow: hidden;
 }
 
 .section-card .card-header {
-  background: linear-gradient(90deg, var(--bbq-primary), var(--bbq-secondary));
-  color: #fff;
-  font-weight: 600;
-  border-radius: 1rem 1rem 0 0 !important;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  background: var(--bbq-charcoal);
+  color: var(--bbq-gold-soft);
   border: none;
+  padding: 1.25rem 1.5rem;
+}
+
+.section-card .card-body {
+  padding: 1.5rem 1.75rem;
+}
+
+.agenda-list {
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+.agenda-list::before {
+  content: "";
+  position: absolute;
+  left: 2.6rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 3px;
+  background: linear-gradient(180deg, var(--bbq-terracotta), var(--bbq-gold));
+  border-radius: 3px;
+}
+
+.agenda-item {
+  display: flex;
+  gap: 1.25rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px dashed rgba(47, 41, 36, 0.15);
+}
+
+.agenda-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .agenda-time {
-  font-weight: 700;
-  color: var(--bbq-primary);
-  min-width: 5rem;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--bbq-terracotta);
+  min-width: 4.5rem;
+  text-align: center;
+  background: var(--bbq-gold-soft);
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.5rem;
+  line-height: 1.2;
+}
+
+#faq .accordion-item {
+  border: none;
+  border-bottom: 1px solid rgba(47, 41, 36, 0.1);
+}
+
+#faq .accordion-button {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--bbq-charcoal);
+  background: transparent;
+  box-shadow: none;
+}
+
+#faq .accordion-button:not(.collapsed) {
+  color: var(--bbq-terracotta);
+  background: var(--bbq-sage-light);
+}
+
+#faq .accordion-button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(196, 77, 42, 0.25);
 }
 
 .btn-bbq-primary {
-  background: var(--bbq-primary);
-  border-color: var(--bbq-primary);
-  color: #fff;
-  font-weight: 600;
-  padding: 0.6rem 1.5rem;
+  background: var(--bbq-gold);
+  border: 2px solid var(--bbq-gold);
+  color: var(--bbq-ink);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .btn-bbq-primary:hover {
-  background: var(--bbq-primary-dark);
-  border-color: var(--bbq-primary-dark);
-  color: #fff;
-}
-
-.btn-bbq-outline {
-  border: 2px solid #fff;
-  color: #fff;
-  font-weight: 600;
-}
-
-.btn-bbq-outline:hover {
-  background: #fff;
-  color: var(--bbq-primary);
+  background: #fff8f0;
+  border-color: #fff8f0;
+  color: var(--bbq-ink);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .bbq-footer {
-  background: var(--bbq-text);
-  color: #fff;
+  background: var(--bbq-ink);
+  color: rgba(255, 248, 240, 0.85);
+  border-top: 4px solid var(--bbq-gold);
+}
+
+.bbq-footer p {
+  font-family: var(--font-display);
 }
 
 .form-page {
@@ -154,30 +296,38 @@ body {
 
 .form-card {
   background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 4px 24px rgba(27, 38, 59, 0.1);
+  border-radius: 1.25rem;
+  border: 1px solid rgba(47, 41, 36, 0.08);
+  box-shadow: 0 12px 40px var(--bbq-shadow);
   padding: 2rem;
 }
 
+.form-card h1,
+.form-card h2 {
+  font-family: var(--font-display);
+}
+
 .stat-pill {
-  background: var(--bbq-cream);
-  border-radius: 0.75rem;
-  padding: 1rem;
+  background: var(--bbq-cream-deep);
+  border-radius: 1rem;
+  padding: 1.25rem;
   text-align: center;
+  border: 1px solid rgba(47, 41, 36, 0.06);
 }
 
 .stat-pill .stat-value {
-  font-size: 1.75rem;
+  font-family: var(--font-display);
+  font-size: 2rem;
   font-weight: 800;
-  color: var(--bbq-primary);
+  color: var(--bbq-terracotta);
 }
 
 .email-preview {
-  background: #f8f9fa;
-  border: 1px solid #dee2e6;
-  border-radius: 0.5rem;
+  background: var(--bbq-cream-deep);
+  border: 1px solid rgba(47, 41, 36, 0.12);
+  border-radius: 0.75rem;
   padding: 1.25rem;
-  font-family: Consolas, "Courier New", monospace;
+  font-family: Consolas, monospace;
   font-size: 0.85rem;
   white-space: pre-wrap;
 }
@@ -187,11 +337,37 @@ body {
 }
 
 .badge-guest {
-  background: var(--bbq-grass);
+  background: var(--bbq-sage);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 576px) {
   .countdown-unit {
-    min-width: 3.5rem;
+    min-width: 3.25rem;
+  }
+
+  .agenda-list::before {
+    left: 2.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bbq-hero h1,
+  .hero-eyebrow,
+  .bbq-hero .hero-meta,
+  .bbq-hero .hero-actions,
+  .bbq-hero .hero-stats,
+  .countdown-box {
+    animation: none;
   }
 }
