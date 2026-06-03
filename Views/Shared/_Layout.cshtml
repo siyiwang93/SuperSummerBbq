@@ -3,15 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
     <title>@ViewData["Title"] - Super Summer BBQ 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/bbq-theme.css" asp-append-version="true" />
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bbq-navbar sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bbq-navbar sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="Index">
                 <i class="bi bi-sun-fill me-2"></i>Super Summer BBQ 2026
@@ -36,6 +38,9 @@
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="Admin" asp-action="Login">Admin</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-nav-register" asp-controller="Registrations" asp-action="Register">Register</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -58,7 +63,8 @@
     <footer class="bbq-footer mt-5">
         <div class="container py-4 text-center">
             <p class="mb-1">&copy; 2026 Super Summer BBQ — Internal Company Event</p>
-            <p class="mb-0 small text-white-50">BV Campus · Building 3 &amp; Building 8 Warehouses</p>
+            <p class="mb-0 small">BV Campus · Building 3 &amp; Building 8 Warehouses</p>
+            <p class="mb-0 theme-marker mt-2">Theme loaded: light cookout v3</p>
         </div>
     </footer>
 
