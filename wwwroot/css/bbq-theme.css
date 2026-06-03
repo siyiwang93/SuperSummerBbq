@@ -392,75 +392,156 @@ h1, h2, h3, h4, .font-display {
   font-size: 0.95rem;
 }
 
-/* Activities */
-.activities-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-md);
-  max-width: 56rem;
-  margin: 0 auto;
+/* Activities — Stitch bento grid (matches "The Feast" layout) */
+.bbq-section-full {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-@media (min-width: 576px) {
-  .activities-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.bbq-section-full .bbq-section-inner {
+  max-width: 1536px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--margin-mobile);
 }
 
 @media (min-width: 992px) {
-  .activities-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+  .bbq-section-full .bbq-section-inner {
+    padding-left: var(--margin-desktop);
+    padding-right: var(--margin-desktop);
   }
 }
 
-.activity-card {
-  background: #fff;
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  grid-auto-rows: minmax(220px, 280px);
+}
+
+.bento-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
   border: 1px solid var(--outline-variant);
-  border-radius: var(--radius-xl);
-  padding: 1.5rem;
-  box-shadow: var(--card-shadow);
+  background: #fff;
+  min-height: 220px;
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.activity-card:hover {
-  transform: translateY(-6px);
+.bento-card:hover {
+  transform: translateY(-8px);
 }
 
-.activity-card-icon {
-  width: 3.25rem;
-  height: 3.25rem;
+.bento-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.bento-card:hover img {
+  transform: scale(1.08);
+}
+
+.bento-overlay {
+  position: absolute;
+  inset: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--secondary-container);
-  color: var(--secondary);
-  border-radius: var(--radius-xl);
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, transparent 55%);
+  pointer-events: none;
 }
 
-.activity-card h3 {
+.bento-overlay-strong {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
+}
+
+.bento-overlay h3 {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  color: var(--on-surface);
-  margin-bottom: 0.5rem;
+  color: #fff;
+  margin: 0 0 0.35rem;
+  line-height: 1.2;
 }
 
-.activity-card p {
+.bento-overlay p {
   margin: 0;
-  color: var(--on-surface-variant);
-  font-size: 0.95rem;
-  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  max-width: 36rem;
 }
 
-.activity-card .chip-bbq {
+.bento-large .bento-overlay h3 {
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+}
+
+.bento-wide .bento-overlay h3 {
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+}
+
+.bento-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin-bottom: 0.65rem;
 }
 
+.bento-chip {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.bento-chip-primary {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.bento-chip-secondary {
+  background: var(--secondary);
+  color: var(--on-secondary);
+}
+
+.bento-chip-tertiary {
+  background: var(--tertiary-container);
+  color: var(--on-tertiary);
+}
+
+@media (min-width: 768px) {
+  .bento-grid {
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 280px;
+  }
+
+  .bento-large {
+    grid-column: span 8;
+    grid-row: span 2;
+  }
+
+  .bento-small {
+    grid-column: span 4;
+    grid-row: span 1;
+  }
+
+  .bento-wide {
+    grid-column: span 12;
+    grid-row: span 2;
+  }
+}
+
 .chip-bbq-yellow {
-  background: var(--tertiary-fixed, #ffe083);
+  background: var(--tertiary-fixed);
   color: var(--tertiary);
 }
 
@@ -630,6 +711,8 @@ h1, h2, h3, h4, .font-display {
 
 @media (prefers-reduced-motion: reduce) {
   .agenda-stitch-item:hover,
+  .bento-card:hover,
+  .bento-card:hover img,
   .btn-bbq-primary:hover,
   .btn-nav-register:hover {
     transform: none;
