@@ -13,18 +13,18 @@
     <link rel="stylesheet" href="~/css/bbq-theme.css" asp-append-version="true" />
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bbq-navbar sticky-top">
+    <header class="bbq-navbar navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="Index">
-                <i class="bi bi-sun-fill me-2"></i>Super Summer BBQ 2026
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                Super Summer BBQ
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bbqNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bbqNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="bbqNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="nav-link@(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? " active" : "")" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="Home" asp-action="Index" asp-fragment="agenda">Agenda</a>
@@ -33,18 +33,18 @@
                         <a class="nav-link" asp-controller="Home" asp-action="Index" asp-fragment="faq">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Registrations" asp-action="Lookup">My Registration</a>
+                        <a class="nav-link@(ViewContext.RouteData.Values["controller"]?.ToString() == "Registrations" && ViewContext.RouteData.Values["action"]?.ToString() == "Lookup" ? " active" : "")" asp-controller="Registrations" asp-action="Lookup">My Registration</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="Admin" asp-action="Login">Admin</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn-nav-register" asp-controller="Registrations" asp-action="Register">Register</a>
+                        <a class="nav-link btn-nav-register" asp-controller="Registrations" asp-action="Register">Join the Party</a>
                     </li>
                 </ul>
             </div>
         </div>
-    </nav>
+    </header>
 
     @if (TempData["Success"] is string successMessage)
     {
@@ -60,11 +60,11 @@
         @RenderBody()
     </main>
 
-    <footer class="bbq-footer mt-5">
-        <div class="container py-4 text-center">
-            <p class="mb-1">&copy; 2026 Super Summer BBQ — Internal Company Event</p>
+    <footer class="bbq-footer">
+        <div class="container text-center">
+            <p class="footer-brand mb-2">Super Summer BBQ 2026</p>
+            <p class="mb-1 small">&copy; 2026 — Internal Company Event</p>
             <p class="mb-0 small">BV Campus · Building 3 &amp; Building 8 Warehouses</p>
-            <p class="mb-0 theme-marker mt-2">Theme loaded: light cookout v3</p>
         </div>
     </footer>
 

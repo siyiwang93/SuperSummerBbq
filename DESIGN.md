@@ -1,224 +1,173 @@
-# Super Summer BBQ 2026 — Design System
-
-> **Borrowed from:** [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) — `design-md/airbnb/DESIGN.md` (warm, welcoming marketplace patterns).  
-> **Adapted for:** internal event registration portal — retro summer cookout (terracotta / gold / sage on cream), not consumer marketplace.
-
 ---
-
-```yaml
----
-version: 1.0
-name: SuperSummerBbq-design
-description: >
-  A warm, generous internal event portal on a cream canvas with terracotta (#c44d2a) as the
-  primary CTA voltage and gold (#f0b429) as accent highlights. Display type uses Fraunces;
-  body uses Atkinson Hyperlegible. The hero carries hierarchy (gradient + countdown); cards
-  and forms stay friendly with soft radii and generous section spacing. Nav is dark ink with
-  gold underline; in-page anchors (Agenda, FAQ) use smooth scroll.
-
+name: Summer BBQ Design System
 colors:
-  primary: "#c44d2a"
-  primary-active: "#9a3a20"
-  primary-disabled: "#e8c4b8"
-  accent: "#f0b429"
-  accent-soft: "#ffe8a3"
-  ink: "#1a1410"
-  body: "#2f2924"
-  muted: "#5c534c"
-  hairline: "#e0d5c8"
-  canvas: "#faf6ef"
-  canvas-deep: "#f3ebe0"
-  surface-card: "#ffffff"
-  surface-soft: "#e8f2eb"
-  sage: "#3d6b4f"
-  sky: "#4a8fad"
-  on-primary: "#fff8f0"
-  on-dark: "#fff8f0"
-  shadow: "rgba(26, 20, 16, 0.12)"
-
+  surface: '#fff8f7'
+  surface-dim: '#f1d3cf'
+  surface-bright: '#fff8f7'
+  surface-container-lowest: '#ffffff'
+  surface-container-low: '#fff0ee'
+  surface-container: '#ffe9e6'
+  surface-container-high: '#ffe2de'
+  surface-container-highest: '#fadcd8'
+  on-surface: '#271815'
+  on-surface-variant: '#5b403c'
+  inverse-surface: '#3e2c2a'
+  inverse-on-surface: '#ffedea'
+  outline: '#906f6b'
+  outline-variant: '#e4beb8'
+  surface-tint: '#ba1a17'
+  primary: '#b61715'
+  on-primary: '#ffffff'
+  primary-container: '#da342b'
+  on-primary-container: '#fffbff'
+  inverse-primary: '#ffb4aa'
+  secondary: '#006e2d'
+  on-secondary: '#ffffff'
+  secondary-container: '#7cf994'
+  on-secondary-container: '#007230'
+  tertiary: '#735c00'
+  on-tertiary: '#ffffff'
+  tertiary-container: '#cea700'
+  on-tertiary-container: '#4e3e00'
+  error: '#ba1a1a'
+  on-error: '#ffffff'
+  error-container: '#ffdad6'
+  on-error-container: '#93000a'
+  primary-fixed: '#ffdad5'
+  primary-fixed-dim: '#ffb4aa'
+  on-primary-fixed: '#410001'
+  on-primary-fixed-variant: '#930006'
+  secondary-fixed: '#7ffc97'
+  secondary-fixed-dim: '#62df7d'
+  on-secondary-fixed: '#002109'
+  on-secondary-fixed-variant: '#005320'
+  tertiary-fixed: '#ffe083'
+  tertiary-fixed-dim: '#eec200'
+  on-tertiary-fixed: '#231b00'
+  on-tertiary-fixed-variant: '#574500'
+  background: '#fff8f7'
+  on-background: '#271815'
+  surface-variant: '#fadcd8'
 typography:
-  display-xl:
-    fontFamily: "'Fraunces', Georgia, serif"
-    fontSize: 48px
-    fontWeight: 800
-    lineHeight: 1.1
-    letterSpacing: 0.02em
   display-lg:
-    fontFamily: "'Fraunces', Georgia, serif"
+    fontFamily: Bricolage Grotesque
+    fontSize: 56px
+    fontWeight: '800'
+    lineHeight: '1.1'
+    letterSpacing: -0.02em
+  headline-lg:
+    fontFamily: Bricolage Grotesque
+    fontSize: 40px
+    fontWeight: '700'
+    lineHeight: '1.2'
+  headline-lg-mobile:
+    fontFamily: Bricolage Grotesque
     fontSize: 32px
-    fontWeight: 600
-    lineHeight: 1.2
-  display-md:
-    fontFamily: "'Fraunces', Georgia, serif"
-    fontSize: 24px
-    fontWeight: 600
-    lineHeight: 1.25
-  title-md:
-    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
+    fontWeight: '700'
+    lineHeight: '1.2'
+  headline-md:
+    fontFamily: Bricolage Grotesque
+    fontSize: 28px
+    fontWeight: '600'
+    lineHeight: '1.3'
+  body-lg:
+    fontFamily: Be Vietnam Pro
     fontSize: 18px
-    fontWeight: 700
-    lineHeight: 1.3
+    fontWeight: '400'
+    lineHeight: '1.6'
   body-md:
-    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
+    fontFamily: Be Vietnam Pro
     fontSize: 16px
-    fontWeight: 400
-    lineHeight: 1.5
-  body-sm:
-    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
+    fontWeight: '400'
+    lineHeight: '1.5'
+  label-md:
+    fontFamily: Be Vietnam Pro
     fontSize: 14px
-    fontWeight: 400
-    lineHeight: 1.45
-  caption:
-    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
+    fontWeight: '600'
+    lineHeight: '1.2'
+    letterSpacing: 0.01em
+  label-sm:
+    fontFamily: Be Vietnam Pro
     fontSize: 12px
-    fontWeight: 700
-    lineHeight: 1.33
-    letterSpacing: 0.08em
-    textTransform: uppercase
-  button-md:
-    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
-    fontSize: 16px
-    fontWeight: 700
-    lineHeight: 1.25
-  nav-link:
-    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
-    fontSize: 13px
-    fontWeight: 700
-    lineHeight: 1.25
-    letterSpacing: 0.03em
-    textTransform: uppercase
-
+    fontWeight: '700'
+    lineHeight: '1.2'
 rounded:
-  sm: 8px
-  md: 14px
-  lg: 20px
-  xl: 32px
+  sm: 0.25rem
+  DEFAULT: 0.5rem
+  md: 0.75rem
+  lg: 1rem
+  xl: 1.5rem
   full: 9999px
-
 spacing:
+  base: 8px
   xs: 4px
-  sm: 8px
-  md: 16px
-  lg: 24px
-  xl: 32px
-  section: 64px
+  sm: 12px
+  md: 24px
+  lg: 48px
+  xl: 80px
+  gutter: 24px
+  margin-mobile: 16px
+  margin-desktop: 64px
+---
 
-components:
-  button-primary:
-    backgroundColor: "{colors.primary}"
-    textColor: "{colors.on-primary}"
-    typography: "{typography.button-md}"
-    rounded: "{rounded.md}"
-    padding: 14px 28px
-  button-secondary:
-    backgroundColor: transparent
-    textColor: "{colors.on-dark}"
-    border: "2px solid rgba(255, 248, 240, 0.5)"
-    rounded: "{rounded.md}"
-  top-nav:
-    backgroundColor: "rgba(26, 20, 16, 0.92)"
-    textColor: "{colors.on-dark}"
-    borderBottom: "3px solid {colors.accent}"
-    height: 56px
-  hero-band:
-    background: "linear-gradient(145deg, #1a1410 0%, #3d2618 35%, #8b3d22 70%, #c44d2a 100%)"
-    textColor: "{colors.on-dark}"
-  event-card:
-    backgroundColor: "{colors.surface-card}"
-    rounded: "{rounded.lg}"
-    padding: "{spacing.lg}"
-    shadow: "{colors.shadow}"
-  form-input:
-    backgroundColor: "{colors.surface-card}"
-    border: "1px solid {colors.hairline}"
-    rounded: "{rounded.sm}"
-    height: 48px
-  countdown-digit:
-    typography: "{typography.display-lg}"
-    color: "{colors.accent}"
-```
+## Brand & Style
 
-## CSS variables (implementation)
+This design system is built to capture the essence of an outdoor summer gathering: vibrant, energetic, and inherently social. The brand personality is "Al Fresco Joy"—it prioritizes warmth over clinical precision and community over solitude.
 
-Map tokens in `wwwroot/css/site.css`:
+The visual style is a blend of **Modern-Tactile and High-Contrast**. It utilizes a "sun-drenched" aesthetic, characterized by high-saturation accents against warm, creamy neutral bases. The UI should feel inviting and "juicy," mimicking the sensory experience of a summer feast. We avoid sharp edges and cold grays in favor of organic shapes and a palette that feels edible and organic.
 
-| Token | Variable |
-|-------|----------|
-| Primary | `--bbq-terracotta` |
-| Primary active | `--bbq-terracotta-dark` |
-| Accent | `--bbq-gold` |
-| Ink / body | `--bbq-ink`, `--bbq-charcoal` |
-| Canvas | `--bbq-cream`, `--bbq-cream-deep` |
-| Sage accent | `--bbq-sage`, `--bbq-sage-light` |
-| Display font | `--font-display` (Fraunces) |
-| Body font | `--font-body` (Atkinson Hyperlegible) |
+## Colors
 
-## Brand principles (from Airbnb, applied to BBQ)
+The palette is derived from the textures of a backyard cookout. 
+- **Primary (Tomato Red):** Used for primary actions, critical highlights, and brand-heavy elements. It communicates heat, energy, and appetite.
+- **Secondary (Grass Green):** Represents the outdoor setting. Used for secondary actions, success states, and balancing the intensity of the red.
+- **Tertiary (Sunny Yellow):** Used for accents, warnings (softened), and "golden hour" highlights.
+- **Neutrals:** We move away from pure white and black. The background is a warm corn-silk cream, and the text is a deep, smoky mahogany charcoal to maintain a soft but high-contrast readability.
 
-1. **One hot color** — Terracotta owns primary CTAs (Register Now, Submit). Gold is accent only (nav underline, countdown, badges).
-2. **Photography / atmosphere over type muscle** — Hero gradient and texture do hierarchy; headlines are confident but not enterprise-heavy.
-3. **Friendly geometry** — Cards use `{rounded.lg}`; buttons `{rounded.md}`; no sharp corporate corners on marketing surfaces.
-4. **Generous whitespace** — Section bands use `{spacing.section}` (64px); card grids can be denser (16px gutters) for agenda rows.
-5. **Trust through clarity** — Registration count, event date/location, and FAQ visible without hunting.
+## Typography
 
-## Page map
+The typography strategy balances playful character with high legibility.
 
-| Surface | Role |
-|---------|------|
-| Landing (`Home/Index`) | Hero, countdown, live registration count, Agenda `#agenda`, FAQ `#faq` |
-| Register / Manage | Forms with `{component.form-input}`; lookup by Employee ID + email |
-| Admin | Stats dashboard; utilitarian tables (can relax marketing polish) |
+**Bricolage Grotesque** is our display face. Its quirky, slightly eccentric terminals add a sense of movement and "fun" to the headlines. It should be used for all large-scale type to establish the energetic tone of the design system.
 
-## Components (BBQ-specific)
+**Be Vietnam Pro** serves as the functional workhorse. It is contemporary and friendly, with a generous x-height that ensures readability even during fast-paced interactions. It maintains the approachable brand voice while providing the necessary structure for lists, descriptions, and labels.
 
-### Navigation (`bbq-navbar`)
+## Layout & Spacing
 
-Dark bar, gold bottom border, uppercase nav links. Links: Home, Agenda (scroll), FAQ (scroll), My Registration, Register Now (primary). No duplicate Register in hero button row next to Register Now — My Registration lives in nav only.
+This design system employs a **Fluid Grid** model based on an 8px rhythmic scale. 
 
-### Hero (`bbq-hero`)
+- **Desktop:** A 12-column grid with 24px gutters and large 64px outer margins to allow the content to "breathe" like an open park.
+- **Mobile:** A 4-column grid with 16px margins.
+- **Spacing Philosophy:** Use generous white space (the "lg" and "xl" units) between major sections to prevent the vibrant colors from feeling overwhelming. Elements should feel grouped but never crowded.
 
-Full-width gradient band, event title, date/location, single **Register Now** CTA. Countdown digits in gold; no separate “Countdown to the BBQ” heading.
+## Elevation & Depth
 
-### Event cards
+We avoid the clinical look of standard drop shadows. Instead, the design system uses **Tonal Layers and Tinted Ambient Shadows**.
 
-Agenda and FAQ sections: full-width stacked rows (not side-by-side on desktop). White cards on cream with soft shadow; section titles in Fraunces.
+Depth is created through:
+1.  **Color Stacking:** Surfaces that sit closer to the user are slightly lighter than the warm cream background.
+2.  **Soft Shadows:** When an element requires lift (like a floating action button or a modal), use a shadow tinted with the primary Tomato Red at a very low opacity (5-8%). This creates a "glow" rather than a dark void.
+3.  **Physicality:** Elements should feel like they are resting on a surface. Use 1px internal strokes (inner shadows or subtle borders) in a slightly darker tan to give cards a tangible, paper-like edge.
 
-### Forms
+## Shapes
 
-Bootstrap 5 base + BBQ overrides. Labels `{typography.caption}`; inputs `{component.form-input}`. Primary submit uses terracotta fill.
+The shape language is **Rounded (Level 2)**. 
+
+Standard components utilize a 0.5rem (8px) radius. Larger containers, such as hero sections or cards, should use `rounded-xl` (1.5rem / 24px). This softness mimics the organic nature of food and outdoor environments, removing any perceived digital "coldness." Avoid sharp corners entirely to maintain the casual and inviting vibe.
+
+## Components
 
 ### Buttons
+Primary buttons are high-energy Tomato Red with bold white text. They should have a subtle "bounce" on hover. Secondary buttons use the Grass Green or a ghost-style outline in the smoky charcoal text color. Use `rounded-xl` for a friendlier, more pill-like appearance on buttons.
 
-- **Primary** — Terracotta, cream text, hover `{colors.primary-active}`.
-- **Secondary** — Outline on hero (cream border); on cream pages, outline charcoal or sage as needed.
+### Cards
+Cards are the primary container for content. Use a white background (contrasting against the cream page background) with a 1px soft tan border. Corner radius should be 24px.
 
-## Responsive behavior
+### Chips & Tags
+Use the Grass Green and Sunny Yellow for chips. These should be fully pill-shaped (rounded-full) and used to categorize items like "Spicy," "Vegetarian," or "Event Type."
 
-| Breakpoint | Changes |
-|------------|---------|
-| Mobile | Nav collapses to toggler; hero padding reduced; agenda/FAQ single column |
-| Tablet+ | Full nav; hero two-column meta where applicable |
-| Desktop | Max content ~1140px (Bootstrap container); smooth scroll offset `5.5rem` for fixed nav |
+### Inputs
+Text fields should have a thick 2px border in a soft tan, turning Tomato Red on focus. Use the `body-md` typography for placeholder text.
 
-Touch targets: minimum 44×44px on nav and primary CTAs.
-
-## Accessibility
-
-- Body font chosen for legibility (Atkinson Hyperlegible).
-- Contrast: cream body text on charcoal meets WCAG for long copy; hero uses cream on dark gradient.
-- Focus visible on links and form controls.
-- `scroll-behavior: smooth` with `scroll-padding-top` / `scroll-margin-top` for anchor targets.
-
-## Known gaps
-
-- Admin dashboard uses default Bootstrap tables — not fully tokenized.
-- No dark mode.
-- Email confirmation is simulated (on-screen + server log only).
-
-## Source reference
-
-Full Airbnb analysis (colors, search pill, listing cards, etc.) lives in awesome-design-md:
-
-`https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/airbnb/DESIGN.md`
-
-Use that file when building net-new marketing patterns; this document is the **project-specific** override layer.
+### Interactive Elements
+Checkboxes and Radios should be slightly oversized to feel more "clunky" and fun rather than tiny and precise. When active, they should fill with the Primary color and use a thick white checkmark.

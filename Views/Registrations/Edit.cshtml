@@ -13,7 +13,7 @@
 
                     <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
 
-                    <form asp-action="Edit" asp-route-id="@Model.Id" method="post">
+                    <form asp-action="Edit" asp-route-id="@Model.Id" method="post" class="bbq-form">
                         @Html.AntiForgeryToken()
                         <input type="hidden" asp-for="Id" />
                         <partial name="_RegistrationForm" model="Model" />
