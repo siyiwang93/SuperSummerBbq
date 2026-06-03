@@ -171,14 +171,5 @@
     <script>
         initBbqCountdown("@Model.EventDateIso");
         initPageScroll();
-        document.querySelectorAll('.bbq-navbar .nav-link[href*="#"]').forEach(function (link) {
-            var hash = link.getAttribute('href');
-            if (hash && hash.indexOf('#') >= 0) {
-                var id = hash.substring(hash.indexOf('#'));
-                if (id.length > 1 && document.querySelector(id)) {
-                    link.classList.add('active');
-                }
-            }
-        });
     </script>
 }

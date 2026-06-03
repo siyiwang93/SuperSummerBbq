@@ -46,4 +46,43 @@
   }
 
   window.initPageScroll = initPageScroll;
+
+  function isHomePage() {
+    var path = window.location.pathname.toLowerCase().replace(/\/+$/, "") || "/";
+    return path === "" || path === "/" || path.endsWith("/home") || path.endsWith("/home/index");
+  }
+
+  function initNavHighlight() {
+    var nav = document.querySelector(".bbq-navbar");
+    if (!nav) return;
+
+    var homeLink = nav.querySelector('[data-nav="home"]');
+    var agendaLink = nav.querySelector('[data-nav="agenda"]');
+    var faqLink = nav.querySelector('[data-nav="faq"]');
+    var sectionLinks = [homeLink, agendaLink, faqLink].filter(Boolean);
+
+    function update() {
+      sectionLinks.forEach(function (link) {
+        link.classList.remove("active");
+      });
+
+      if (!isHomePage()) return;
+
+      var hash = window.location.hash;
+      if (hash === "#agenda" && agendaLink) {
+        agendaLink.classList.add("active");
+      } else if (hash === "#faq" && faqLink) {
+        faqLink.classList.add("active");
+      } else if (homeLink) {
+        homeLink.classList.add("active");
+      }
+    }
+
+    update();
+    window.addEventListener("hashchange", update);
+  }
+
+  window.initNavHighlight = initNavHighlight;
+
+  document.addEventListener("DOMContentLoaded", initNavHighlight);
 })();
