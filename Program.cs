@@ -27,7 +27,11 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-builder.Services.AddControllersWithViews();
+var mvc = builder.Services.AddControllersWithViews();
+if (builder.Environment.IsDevelopment())
+{
+    mvc.AddRazorRuntimeCompilation();
+}
 
 var app = builder.Build();
 
