@@ -42,6 +42,8 @@ html {
   font-size: 16px;
   scroll-behavior: smooth;
   scroll-padding-top: 5.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 #feast,
@@ -56,6 +58,14 @@ body {
   color: var(--on-surface);
   background: var(--background);
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 h1, h2, h3, h4, .font-display {
@@ -752,21 +762,31 @@ h1, h2, h3, h4, .font-display {
   border-color: var(--primary);
 }
 
-/* Footer */
-.bbq-footer {
-  background: var(--surface-container-low);
-  color: var(--on-surface-variant);
-  border-top: 1px solid var(--outline-variant);
+/* Footer — flush with bottom of page (no bottom padding/margin on footer or children) */
+footer.bbq-footer {
+  flex-shrink: 0;
+  margin-top: auto;
+  margin-bottom: 0 !important;
   padding-top: var(--space-lg);
   padding-left: var(--margin-mobile);
   padding-right: var(--margin-mobile);
-  padding-bottom: 0;
-  margin-bottom: 0;
+  padding-bottom: 0 !important;
+  background: var(--surface-container-low);
+  color: var(--on-surface-variant);
+  border-top: 1px solid var(--outline-variant);
 }
 
+.bbq-footer .bbq-footer-inner,
 .bbq-footer .container {
-  padding-bottom: 0;
-  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0 !important;
+  margin-top: 0;
+  margin-bottom: 0 !important;
+}
+
+.bbq-footer p {
+  margin-top: 0;
+  margin-bottom: 0.35rem;
 }
 
 .bbq-footer p:last-child {
