@@ -675,6 +675,23 @@ h1, h2, h3, h4, .font-display {
   padding: 0 1.5rem 1.25rem;
 }
 
+/* Standalone content pages (Agenda, FAQ) */
+.bbq-content-page {
+  padding: var(--space-lg) var(--margin-mobile) var(--space-xl);
+}
+
+.bbq-content-page-inner {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+  .bbq-content-page {
+    padding-left: var(--margin-desktop);
+    padding-right: var(--margin-desktop);
+  }
+}
+
 /* Forms */
 .form-page {
   padding: var(--space-lg) var(--margin-mobile) var(--space-xl);
