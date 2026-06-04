@@ -166,7 +166,7 @@ h1, h2, h3, h4, .font-display {
 }
 
 .bbq-hero-content h1 {
-  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  font-size: clamp(2.75rem, 7vw, 4.25rem);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -176,9 +176,10 @@ h1, h2, h3, h4, .font-display {
 }
 
 .hero-tagline {
-  font-size: 1.125rem;
+  font-size: 1.35rem;
+  line-height: 1.5;
   color: rgba(255, 255, 255, 0.92);
-  max-width: 36rem;
+  max-width: 40rem;
   margin: 0 auto var(--space-md);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
@@ -190,6 +191,7 @@ h1, h2, h3, h4, .font-display {
   align-items: center;
   gap: 1rem;
   color: #fff;
+  font-size: 1.15rem;
   font-weight: 600;
   margin-bottom: var(--space-md);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -257,8 +259,43 @@ h1, h2, h3, h4, .font-display {
 
 .hero-stats {
   color: rgba(255, 255, 255, 0.9);
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   font-weight: 600;
+}
+
+/* Landing page sections — larger headers & subtitles (home only) */
+main:has(.bbq-hero-stitch) .bbq-section-title {
+  font-size: clamp(2rem, 4.5vw, 2.875rem);
+}
+
+main:has(.bbq-hero-stitch) .bbq-section-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.55;
+  max-width: 40rem;
+}
+
+main:has(.bbq-hero-stitch) .bento-overlay h3 {
+  font-size: 1.4rem;
+}
+
+main:has(.bbq-hero-stitch) .bento-large .bento-overlay h3 {
+  font-size: clamp(1.55rem, 3.5vw, 2.1rem);
+}
+
+main:has(.bbq-hero-stitch) .bento-wide .bento-overlay h3 {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+}
+
+main:has(.bbq-hero-stitch) .bento-overlay p {
+  font-size: 1.05rem;
+}
+
+main:has(.bbq-hero-stitch) .pitmaster-body h3 {
+  font-size: 1.55rem;
+}
+
+main:has(.bbq-hero-stitch) .pitmaster-body p {
+  font-size: 1.1rem;
 }
 
 .btn-bbq-primary {
