@@ -757,7 +757,20 @@ h1, h2, h3, h4, .font-display {
   background: var(--surface-container-low);
   color: var(--on-surface-variant);
   border-top: 1px solid var(--outline-variant);
-  padding: var(--space-lg) var(--margin-mobile);
+  padding-top: var(--space-lg);
+  padding-left: var(--margin-mobile);
+  padding-right: var(--margin-mobile);
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.bbq-footer .container {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.bbq-footer p:last-child {
+  margin-bottom: 0 !important;
 }
 
 .bbq-footer .footer-brand {
