@@ -80,6 +80,21 @@ h1, h2, h3, h4, .font-display {
   padding: 0.5rem 0;
 }
 
+.bbq-nav-container {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 992px) {
+  .bbq-nav-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
 .bbq-navbar .navbar-brand {
   font-family: var(--font-display);
   font-size: 1.55rem;
@@ -161,9 +176,10 @@ h1, h2, h3, h4, .font-display {
   position: relative;
   z-index: 1;
   text-align: center;
-  padding: 6rem var(--margin-mobile) 4rem;
-  max-width: 56rem;
+  width: 100%;
+  max-width: min(90rem, 96vw);
   margin: 0 auto;
+  padding: 6rem 1rem 4rem;
 }
 
 .bbq-hero-content h1 {
@@ -180,7 +196,7 @@ h1, h2, h3, h4, .font-display {
   font-size: 1.35rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.92);
-  max-width: 40rem;
+  max-width: min(52rem, 90vw);
   margin: 0 auto var(--space-md);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
@@ -207,9 +223,17 @@ h1, h2, h3, h4, .font-display {
   .hero-meta-row .meta-divider {
     display: inline;
   }
+
   .bbq-hero-content {
-    padding-left: var(--margin-desktop);
-    padding-right: var(--margin-desktop);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .bbq-hero-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
@@ -272,7 +296,7 @@ main:has(.bbq-hero-stitch) .bbq-section-title {
 main:has(.bbq-hero-stitch) .bbq-section-subtitle {
   font-size: 1.25rem;
   line-height: 1.55;
-  max-width: 40rem;
+  max-width: min(52rem, 90vw);
 }
 
 main:has(.bbq-hero-stitch) .bento-overlay h3 {
@@ -449,15 +473,15 @@ main:has(.bbq-hero-stitch) .pitmaster-body p {
 }
 
 .bbq-section-full .bbq-section-inner {
-  max-width: 1536px;
+  max-width: min(1600px, 96vw);
   margin: 0 auto;
-  padding: var(--space-xl) var(--margin-mobile);
+  padding: var(--space-xl) 1rem;
 }
 
 @media (min-width: 992px) {
   .bbq-section-full .bbq-section-inner {
-    padding-left: var(--margin-desktop);
-    padding-right: var(--margin-desktop);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 
