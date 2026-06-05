@@ -811,6 +811,26 @@ main:has(.bbq-hero-stitch) .pitmaster-body p {
   padding: var(--space-lg) var(--margin-mobile) var(--space-xl);
 }
 
+/* My Registration — vertically centered in viewport */
+main:has(.form-page-centered) {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-page-centered {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+}
+
+.form-page-centered > .container {
+  width: 100%;
+}
+
 .form-card {
   background: #fff;
   border-radius: var(--radius-xl);
