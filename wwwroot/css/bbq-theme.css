@@ -851,16 +851,28 @@ main:has(.bbq-hero-stitch) .pitmaster-body p {
   width: 100%;
 }
 
-.bbq-feast-page .bbq-section-alt {
+.bbq-feast-page.bbq-content-page {
+  padding: var(--space-lg) 1rem 0;
+}
+
+.bbq-feast-page .bbq-section-full {
   margin-top: var(--space-lg);
-  padding: var(--space-xl) 0;
-  border-radius: var(--radius-xl);
+}
+
+.bbq-feast-page .bbq-section-full.bbq-section-alt {
+  width: 100%;
+  max-width: none;
 }
 
 @media (min-width: 992px) {
-  .bbq-content-page {
+  .bbq-content-page:not(.bbq-feast-page) {
     padding-left: var(--margin-desktop);
     padding-right: var(--margin-desktop);
+  }
+
+  .bbq-feast-page.bbq-content-page {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
