@@ -39,9 +39,6 @@
                         <a class="nav-link@(ViewContext.RouteData.Values["controller"]?.ToString() == "Registrations" && ViewContext.RouteData.Values["action"]?.ToString() == "Lookup" ? " bbq-nav-current" : "")" asp-controller="Registrations" asp-action="Lookup">My Registration</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Admin" asp-action="Login">Admin</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link btn-nav-register" asp-controller="Registrations" asp-action="Register">Join the Party</a>
                     </li>
                 </ul>
