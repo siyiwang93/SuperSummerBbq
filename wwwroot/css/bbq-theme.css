@@ -831,6 +831,36 @@ main:has(.form-page-centered) {
   width: 100%;
 }
 
+@media (min-width: 992px) {
+  .form-page-centered .row > .col-lg-6 {
+    flex: 0 0 55%;
+    max-width: 55%;
+  }
+}
+
+.form-page-centered .form-card {
+  padding: 2.2rem;
+  font-size: 1.1rem;
+}
+
+.form-page-centered .form-card .h3 {
+  font-size: 1.925rem;
+}
+
+.form-page-centered .form-card .form-label {
+  font-size: 0.9625rem;
+}
+
+.form-page-centered .form-card .form-control {
+  font-size: 1.1rem;
+  padding: 0.55rem 0.95rem;
+}
+
+.form-page-centered .form-card .btn-bbq-primary {
+  font-size: 1.1rem;
+  padding: 0.94rem 1.93rem;
+}
+
 .form-card {
   background: #fff;
   border-radius: var(--radius-xl);
