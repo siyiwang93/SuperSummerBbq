@@ -944,6 +944,195 @@ main:has(.form-page-centered) {
   font-size: 1.125rem;
 }
 
+/* Registration confirmation — Stitch DESIGN.md */
+.form-page-confirmation {
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-xl);
+}
+
+.bbq-confirm-hero {
+  text-align: center;
+  background: var(--surface-container-low);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--sun-glow), var(--card-shadow);
+  padding: var(--space-lg) var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.bbq-confirm-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-bottom: var(--space-md);
+  border-radius: var(--radius-full, 9999px);
+  background: var(--secondary-container);
+  color: var(--secondary);
+  font-size: 2rem;
+  box-shadow: var(--sun-glow);
+}
+
+.bbq-confirm-eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.bbq-confirm-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--on-surface);
+  margin: 0 0 0.75rem;
+}
+
+.bbq-confirm-lead {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--on-surface-variant);
+  max-width: 36rem;
+  margin: 0 auto var(--space-md);
+}
+
+.bbq-confirm-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.bbq-confirm-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: left;
+}
+
+.bbq-confirm-chip-secondary {
+  background: var(--secondary-container);
+  color: var(--secondary);
+}
+
+.bbq-confirm-chip-tertiary {
+  background: var(--tertiary-fixed);
+  color: var(--tertiary);
+}
+
+.bbq-confirm-card {
+  background: #fff;
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--sun-glow), var(--card-shadow);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.bbq-confirm-card-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--on-surface);
+  margin: 0 0 var(--space-md);
+}
+
+.bbq-confirm-details {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem 1.5rem;
+  margin: 0;
+}
+
+@media (min-width: 576px) {
+  .bbq-confirm-details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bbq-confirm-details-wide {
+    grid-column: 1 / -1;
+  }
+}
+
+.bbq-confirm-details dt {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+  margin-bottom: 0.15rem;
+}
+
+.bbq-confirm-details dd {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--on-surface);
+}
+
+.bbq-confirm-code {
+  font-size: 0.9rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--surface-container);
+  color: var(--primary);
+}
+
+.bbq-confirm-email-header {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: var(--space-md);
+}
+
+.bbq-confirm-email-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-lg);
+  background: var(--primary-fixed);
+  color: var(--primary);
+  font-size: 1.35rem;
+}
+
+.bbq-confirm-email-note {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--on-surface-variant);
+}
+
+.bbq-email-preview {
+  margin: 0;
+  padding: 1.25rem;
+  background: var(--surface-container);
+  border: 2px solid var(--outline-variant);
+  border-radius: var(--radius-xl);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--on-surface);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.bbq-confirm-actions {
+  margin-top: var(--space-md);
+}
+
 .form-card {
   background: #fff;
   border-radius: var(--radius-xl);

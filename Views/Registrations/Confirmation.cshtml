@@ -1,31 +1,96 @@
 @model EmailConfirmationViewModel
 @{
     ViewData["Title"] = "Registration Confirmed";
+    var r = Model.Registration;
+    var dietary = string.IsNullOrWhiteSpace(r.DietaryPreferences) ? "None specified" : r.DietaryPreferences;
 }
 
-<section class="form-page">
+<section class="form-page form-page-confirmation">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <div class="form-card text-center mb-4">
-                    <i class="bi bi-check-circle-fill text-success display-3 mb-3"></i>
-                    <h1 class="h3 mb-2">You're Registered!</h1>
-                    <p class="text-muted mb-4">
-                        Thank you, @Model.Registration.FirstName! Your spot at @Model.Event.Name is confirmed.
+                <article class="bbq-confirm-hero">
+                    <div class="bbq-confirm-icon" aria-hidden="true">
+                        <i class="bi bi-check-lg"></i>
+                    </div>
+                    <p class="bbq-confirm-eyebrow">Registration confirmed</p>
+                    <h1 class="bbq-confirm-title">You&apos;re Registered!</h1>
+                    <p class="bbq-confirm-lead">
+                        Thank you, <strong>@r.FirstName</strong>! Your spot at <strong>@Model.Event.Name</strong> is locked in.
                     </p>
-                    <a asp-action="Details" asp-route-id="@Model.Registration.Id" class="btn btn-bbq-primary me-2">View My Registration</a>
-                    <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary">Back to Home</a>
-                </div>
+                    <div class="bbq-confirm-chips">
+                        <span class="bbq-confirm-chip bbq-confirm-chip-secondary">
+                            <i class="bi bi-calendar-event me-1"></i>@Model.Event.Date.ToString("MMMM d, yyyy") · @Model.Event.Date.ToString("h:mm tt")
+                        </span>
+                        <span class="bbq-confirm-chip bbq-confirm-chip-tertiary">
+                            <i class="bi bi-geo-alt me-1"></i>@Model.Event.Location
+                        </span>
+                    </div>
+                </article>
 
-                <div class="form-card">
-                    <h2 class="h5 mb-3">
-                        <i class="bi bi-envelope-check me-2"></i>Simulated Confirmation Email
-                    </h2>
-                    <p class="text-muted small mb-3">
-                        In production this would be sent to <strong>@Model.Registration.Email</strong>.
-                        For this demo, the message is logged to the server console and shown below.
-                    </p>
-                    <div class="email-preview">@Model.SimulatedEmailBody</div>
+                <article class="bbq-confirm-card">
+                    <h2 class="bbq-confirm-card-title">Your registration</h2>
+                    <dl class="bbq-confirm-details">
+                        <div>
+                            <dt>Name</dt>
+                            <dd>@r.FirstName @r.LastName</dd>
+                        </div>
+                        <div>
+                            <dt>Employee ID</dt>
+                            <dd>@r.EmployeeId</dd>
+                        </div>
+                        <div>
+                            <dt>Department</dt>
+                            <dd>@r.Department</dd>
+                        </div>
+                        <div>
+                            <dt>Email</dt>
+                            <dd>@r.Email</dd>
+                        </div>
+                        <div>
+                            <dt>Dietary preferences</dt>
+                            <dd>@dietary</dd>
+                        </div>
+                        <div>
+                            <dt>Shuttle to venue</dt>
+                            <dd>@(r.ShuttleToVenue ? "Yes" : "No")</dd>
+                        </div>
+                        <div>
+                            <dt>Shuttle back</dt>
+                            <dd>@(r.ShuttleBack ? "Yes" : "No")</dd>
+                        </div>
+                        <div>
+                            <dt>Bringing a guest</dt>
+                            <dd>@(r.BringingGuest ? "Yes" : "No")</dd>
+                        </div>
+                        <div class="bbq-confirm-details-wide">
+                            <dt>Confirmation #</dt>
+                            <dd><code class="bbq-confirm-code">@r.ConfirmationToken.ToString("N")[..8].ToUpper()</code></dd>
+                        </div>
+                    </dl>
+                </article>
+
+                <article class="bbq-confirm-card bbq-confirm-email">
+                    <div class="bbq-confirm-email-header">
+                        <span class="bbq-confirm-email-icon" aria-hidden="true">
+                            <i class="bi bi-envelope-check"></i>
+                        </span>
+                        <div>
+                            <h2 class="bbq-confirm-card-title mb-1">Confirmation email</h2>
+                            <p class="bbq-confirm-email-note">
+                                In production this would be sent to <strong>@r.Email</strong>.
+                                For this demo, the message is logged to the server console and shown below.
+                            </p>
+                        </div>
+                    </div>
+                    <pre class="bbq-email-preview">@Model.SimulatedEmailBody</pre>
+                </article>
+
+                <div class="bbq-form-actions bbq-confirm-actions">
+                    <a asp-action="Details" asp-route-id="@r.Id" class="btn btn-bbq-primary">
+                        <i class="bi bi-person-badge me-1"></i> View My Registration
+                    </a>
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-bbq-outline">Back to Home</a>
                 </div>
             </div>
         </div>
