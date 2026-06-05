@@ -637,6 +637,24 @@ main:has(.bbq-hero-stitch) .pitmaster-body p {
   }
 }
 
+/* The Feast — bento images 10% smaller */
+#feast .bento-grid {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  grid-auto-rows: minmax(198px, 252px);
+}
+
+#feast .bento-card {
+  min-height: 198px;
+}
+
+@media (min-width: 768px) {
+  #feast .bento-grid {
+    grid-auto-rows: 252px;
+  }
+}
+
 .chip-bbq-yellow {
   background: var(--tertiary-fixed);
   color: var(--tertiary);
