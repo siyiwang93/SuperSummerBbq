@@ -27,9 +27,6 @@
                         <a class="nav-link" asp-controller="Home" asp-action="Index" data-nav="home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Home" asp-action="Index" asp-fragment="feast" data-nav="feast">The Feast</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link@(ViewContext.RouteData.Values["action"]?.ToString() == "Agenda" ? " bbq-nav-current" : "")" asp-controller="Home" asp-action="Agenda">Agenda</a>
                     </li>
                     <li class="nav-item">
@@ -88,10 +85,7 @@
                 if (!onHome) return;
 
                 var hash = window.location.hash;
-                var current =
-                    hash === "#feast" ? nav.querySelector('[data-nav="feast"]') :
-                    hash === "#pitmasters" ? nav.querySelector('[data-nav="pitmasters"]') :
-                    nav.querySelector('[data-nav="home"]');
+                var current = nav.querySelector('[data-nav="home"]');
 
                 if (current) current.classList.add("bbq-nav-current");
             }
