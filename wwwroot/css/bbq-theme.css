@@ -81,17 +81,40 @@ h1, h2, h3, h4, .font-display {
 }
 
 .bbq-nav-container {
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .bbq-nav-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .bbq-nav-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
 }
 
 @media (min-width: 992px) {
-  .bbq-nav-container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  .bbq-navbar .navbar-collapse {
+    flex-grow: 1;
+  }
+
+  .bbq-navbar .bbq-nav-links {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 0.5rem 1.75rem;
+    margin-left: auto;
   }
 }
 
@@ -108,7 +131,8 @@ h1, h2, h3, h4, .font-display {
   font-size: 1.125rem;
   text-transform: none;
   border-radius: 0;
-  padding: 0.45rem 0.85rem !important;
+  padding: 0.45rem 1rem !important;
+  white-space: nowrap;
   border-bottom: 3px solid transparent;
 }
 
