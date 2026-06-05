@@ -1,0 +1,53 @@
+@{
+    ViewData["Title"] = "The Feast";
+    var feastBurger = "https://lh3.googleusercontent.com/aida-public/AB6AXuA7CXWQ8Fyp4d3rwKK8V31FbgqObAWX9MtxFljV44sYQfEeL2eTyU52AFOJECv4V25HcC-1LiQJlkrsChbAyIgkP19Zal-3P0IVA021SaHdmIwegK_uD7iZZLaqZzBOLvC07W0yhdF8ZvYXSEXdCgs9Lk4ky9r7j43iy8XFox128uD9SwKfbGmARngg5WlBMTMhB9VlMl28R7hgzo00DD4gjJ3bYjSmkZONHG5QIsG6neFVI5KGeRhCsw3SpmWxE43xPadMNqLsRFdc";
+    var feastCorn = "https://lh3.googleusercontent.com/aida-public/AB6AXuCgx2g50XQtoxzAv7pqu_lOBjzGYQSC-YdNLI4qJw8y_emSic4SC7oZdqpM1VAtjSAI_o8Dddt7XJfKTtNo0Wtka8p35AuUbjT-91RTwQYSvFQiYMdGkvaAIWsyd9bbDlFFQXdKj39HQz4OTzI39nayAplGebVNowHd8mJOGFT42CFMp25CNHe0o5hBUz-hzemOIguY2vE6O06Im0jNBLJYuLUHUWgGt_EiZF4hv_KoV8q-L4b_WiKxuWRGbeRyKfC-xj9HRFlhKuBm";
+    var feastLemonade = "https://lh3.googleusercontent.com/aida-public/AB6AXuCduPVHN4KyR6b8uSBto__hr-IPtKfAOt1gukkU70SsDajOVu-2QfFmDGv3ZuwCdK1KTyoNWROKV0yednx7uqZ2eynrF3RYxRxfSVyxozs_45jEzcetdtw-N5aHMGj_Ga-_8YT1w4D5ccdqyNDXjyGwi5MFcEJxvjOMHX1dgO8ehP5WyeIJ1BgdNC4emAOscUCGxOLloJsjq2waqapKFW6Xs92U0oMgWGmW_RiTrzAXnD6MrFbsTf9qnieoskLfXRAov6FnO46VMBA5";
+    var feastTacos = "https://lh3.googleusercontent.com/aida-public/AB6AXuA7tr4HjxXNE8vCwqtMNtPCY0I0oUKXI6wsbvURQC322AYayZKfIRaZqChJS8QnZ-SXjqzCcsEdZ7YjwW1Um53XzSBTeuhpiMcJ-JpvIEwZMa0JKTnXdhAKfz3LY1eI2PehHHqr_sLUiNAYLZYhIdhtuDTjH6XvzG18QZnacMejY1jfxV9MakOb0oHGlQSpSDdqs1vHAH0OWCj5Gc8tz6qtJguiqMewxVbZJxJfFT99AqcQkliJNg4tdtnAUTpgjFyym-BoTdxAtwx-";
+}
+
+<section class="bbq-content-page bbq-feast-page">
+    <div class="bbq-feast-page-inner">
+        <section class="bbq-section" id="feast">
+            <h2 class="bbq-section-title">The Main Event: The Feast</h2>
+            <p class="bbq-section-subtitle">A sensory journey through the best of summer grilling, from flame-kissed burgers to sun-ripened sides.</p>
+            <div class="bento-grid">
+                <article class="bento-card bento-large">
+                    <img src="@feastBurger" alt="Gourmet Burger" loading="lazy" />
+                    <div class="bento-overlay bento-overlay-strong">
+                        <div class="bento-chips">
+                            <span class="bento-chip bento-chip-primary">Bestseller</span>
+                            <span class="bento-chip bento-chip-secondary">Spicy Option</span>
+                        </div>
+                        <h3>The Sizzle Master Burger</h3>
+                        <p>Hand-pressed wagyu, aged cheddar, and our secret &quot;Habanero Honey&quot; BBQ sauce on a toasted brioche.</p>
+                    </div>
+                </article>
+                <article class="bento-card bento-small">
+                    <img src="@feastCorn" alt="Grilled Corn" loading="lazy" />
+                    <div class="bento-overlay">
+                        <h3>Golden Street Corn</h3>
+                        <p>Lime crema, cotija, and a dash of smoked paprika.</p>
+                    </div>
+                </article>
+                <article class="bento-card bento-small">
+                    <img src="@feastLemonade" alt="Cold Lemonade" loading="lazy" />
+                    <div class="bento-overlay">
+                        <h3>Hand-Squeezed Refreshment</h3>
+                        <p>Mint-infused lemonade with fresh Sicilian lemons.</p>
+                    </div>
+                </article>
+                <article class="bento-card bento-wide">
+                    <img src="@feastTacos" alt="Chef Gabriel's Street Tacos" loading="lazy" />
+                    <div class="bento-overlay bento-overlay-strong">
+                        <div class="bento-chips">
+                            <span class="bento-chip bento-chip-tertiary">Chef's Special</span>
+                        </div>
+                        <h3>Chef Gabriel's Street Tacos</h3>
+                        <p>Authentic slow-smoked carnitas with fresh cilantro, onions, and a zingy lime squeeze.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+</section>

@@ -27,6 +27,9 @@
                         <a class="nav-link" asp-controller="Home" asp-action="Index" data-nav="home">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link@(ViewContext.RouteData.Values["action"]?.ToString() == "Feast" ? " bbq-nav-current" : "")" asp-controller="Home" asp-action="Feast">The Feast</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link@(ViewContext.RouteData.Values["action"]?.ToString() == "Agenda" ? " bbq-nav-current" : "")" asp-controller="Home" asp-action="Agenda">Agenda</a>
                     </li>
                     <li class="nav-item">

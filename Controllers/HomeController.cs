@@ -24,6 +24,8 @@ public class HomeController(
 
     public IActionResult Agenda() => View();
 
+    public IActionResult Feast() => View();
+
     public IActionResult Faq() => View();
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
