@@ -907,6 +907,43 @@ main:has(.form-page-centered) {
   padding: 0.94rem 1.93rem;
 }
 
+/* Join the Party (Register) — larger form text */
+.form-page-register .form-card {
+  padding: 2.25rem;
+  font-size: 1.125rem;
+}
+
+.form-page-register .form-card .h3 {
+  font-size: 2rem;
+}
+
+.form-page-register .form-card .text-muted {
+  font-size: 1.0625rem;
+}
+
+.form-page-register .bbq-form .form-label {
+  font-size: 1rem;
+}
+
+.form-page-register .bbq-form .form-control,
+.form-page-register .bbq-form .form-select {
+  font-size: 1.125rem;
+  padding: 0.7rem 1.1rem;
+}
+
+.form-page-register .bbq-form .form-check-label {
+  font-size: 1.0625rem;
+}
+
+.form-page-register .bbq-form .text-danger {
+  font-size: 1rem;
+}
+
+.form-page-register .bbq-form-actions .btn-bbq-primary,
+.form-page-register .bbq-form-actions .btn-bbq-outline {
+  font-size: 1.125rem;
+}
+
 .form-card {
   background: #fff;
   border-radius: var(--radius-xl);
