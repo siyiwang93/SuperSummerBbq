@@ -16,11 +16,11 @@
                     <form asp-action="Register" method="post" class="bbq-form">
                         @Html.AntiForgeryToken()
                         <partial name="_RegistrationForm" model="Model" />
-                        <div class="mt-4 d-flex gap-2 flex-wrap">
+                        <div class="mt-4 bbq-form-actions">
                             <button type="submit" class="btn btn-bbq-primary">
                                 <i class="bi bi-check-lg me-1"></i> Submit Registration
                             </button>
-                            <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                            <a asp-controller="Home" asp-action="Index" class="btn btn-bbq-outline">Cancel</a>
                         </div>
                     </form>
                 </div>

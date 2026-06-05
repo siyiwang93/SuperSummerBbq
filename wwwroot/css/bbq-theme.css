@@ -395,6 +395,52 @@ main:has(.bbq-hero-stitch) .pitmaster-body p {
   color: var(--primary);
 }
 
+/* Form action button pairs (Register, etc.) */
+.bbq-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.bbq-form-actions .btn-bbq-primary,
+.bbq-form-actions .btn-bbq-outline {
+  flex: 1 1 12rem;
+  min-height: 3.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-xl);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.bbq-form-actions .btn-bbq-primary {
+  border: 2px solid transparent;
+}
+
+.bbq-form-actions .btn-bbq-outline {
+  background: #fff;
+  border: 2px solid var(--outline-variant);
+  color: var(--on-surface);
+}
+
+.bbq-form-actions .btn-bbq-outline:hover {
+  background: var(--surface-container-low);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: scale(1.03);
+}
+
+.bbq-form-actions .btn-bbq-primary:hover {
+  transform: scale(1.03);
+}
+
 /* Sections */
 .bbq-section {
   padding: var(--space-xl) var(--margin-mobile);
