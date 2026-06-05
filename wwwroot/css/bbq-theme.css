@@ -851,6 +851,12 @@ main:has(.bbq-hero-stitch) .pitmaster-body p {
   width: 100%;
 }
 
+.bbq-feast-page .bbq-section-alt {
+  margin-top: var(--space-lg);
+  padding: var(--space-xl) 0;
+  border-radius: var(--radius-xl);
+}
+
 @media (min-width: 992px) {
   .bbq-content-page {
     padding-left: var(--margin-desktop);
